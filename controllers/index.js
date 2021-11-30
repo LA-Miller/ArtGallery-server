@@ -1,4 +1,5 @@
 module.exports = {
-    artGalleryController: require("./artGalleryController"),
+    userController: require('./userController'),
+    
 };
 
