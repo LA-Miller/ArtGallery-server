@@ -1,9 +1,8 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize("postgres://postgres:Happy2b1@localhost:5432/artGallery");// pg admin database
+// localhost DB
+const db = new Sequelize(`postgres://postgres:${process.env.PGPASS}@localhost:5432/${process.env.PGDB}`);
 
-/*-------------------------------------------------------
-    second image database or in new folder possibly
--------------------------------------------------------*/
+// deployment DB - placeholder
 
-module.exports= sequelize;
+module.exports = db;
