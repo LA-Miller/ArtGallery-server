@@ -52,6 +52,12 @@ router.post("/create", validateJWT, async (req, res) => {
 //     for_sale: for_sale,
 //     price: price
 //   }
+//   try {
+//     const update = await PostModel.update(updatedPost, query);
+//     res.status(200).json(update);
+//   } catch(err) {
+//     res.status(500).json({ error: err });
+//   }
 // })
 
 // GET ALL POSTS OF AN INDIVIDUAL USER

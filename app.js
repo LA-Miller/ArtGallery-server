@@ -13,7 +13,7 @@ app.use("/art", controllers.postsController); // endpoint beginning with /art
 
 dbConnection.authenticate()
     .then(() => dbConnection.sync(
-        {force: true}
+        // {force: true}
     ))
         .then(() => {
             app.listen(3000, () => {
