@@ -4,10 +4,12 @@ const app = Express();
 const dbConnection = require("./db");
 const controllers = require("./controllers");
 
+app.use(require("./middleware/headers"))
+
 app.use(Express.json());
 
-
 app.use("/user", controllers.userController);// endpoint beginning with /user
+app.use("/art", controllers.postsController); // endpoint beginning with /art
 
 dbConnection.authenticate()
     .then(() => dbConnection.sync())
