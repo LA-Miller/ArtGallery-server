@@ -3,7 +3,6 @@ const router = Express.Router();
 const validateJWT = require("../middleware/validate-jwt");
 const { PostModel } = require("../models");
 
-
 /*
 ======================
     Create a Post
