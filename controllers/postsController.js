@@ -31,28 +31,28 @@ router.post("/create", validateJWT, async (req, res) => {
 });
 
 // UPDATE POSTS
-router.put("/:id", validateJWT, async(req, res) => {
-  const { artist_name, url, description, style, era, for_sale, price } = req.body.art;
-  const postId = req.params.id;
-  const userId = req.user.id;
+// router.put("/:id", validateJWT, async(req, res) => {
+//   const { artist_name, url, description, style, era, for_sale, price } = req.body.art;
+//   const postId = req.params.id;
+//   const userId = req.user.id;
 
-  const query = {
-    where: {
-      id: postId,
-      owner_id: userId
-    }
-  }
+//   const query = {
+//     where: {
+//       id: postId,
+//       owner_id: userId
+//     }
+//   }
 
-  const updatedPost = {
-    artist_name: artist_name,
-    url: url,
-    description: description,
-    style: style,
-    era: era,
-    for_sale: for_sale,
-    price: price
-  }
-})
+//   const updatedPost = {
+//     artist_name: artist_name,
+//     url: url,
+//     description: description,
+//     style: style,
+//     era: era,
+//     for_sale: for_sale,
+//     price: price
+//   }
+// })
 
 // GET ALL POSTS OF AN INDIVIDUAL USER
 router.get("/", validateJWT, async (req, res) => {
