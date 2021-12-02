@@ -12,7 +12,9 @@ app.use("/user", controllers.userController);// endpoint beginning with /user
 app.use("/art", controllers.postsController);
 
 dbConnection.authenticate()
-    .then(() => dbConnection.sync())
+    .then(() => dbConnection.sync(
+        // {force: true}
+    ))
         .then(() => {
             app.listen(3000, () => {
                 console.log(`[Server] :Listening on port 3000.`);

@@ -2,4 +2,7 @@ const UserModel = require('./user');
 const PostModel = require('./art');
 
 
-module.exports = { UserModel };
+module.exports = {
+    UserModel,
+    PostModel
+};
