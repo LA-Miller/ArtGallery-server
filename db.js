@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize/dist");
 
-const Sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
 })
 
@@ -9,4 +9,4 @@ const Sequelize = new Sequelize(process.env.DATABASE_URL, {
 
 // deployment DB - placeholder
 
-module.exports = db;
+module.exports = sequelize;
