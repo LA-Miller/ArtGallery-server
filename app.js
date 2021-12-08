@@ -15,14 +15,14 @@ app.use("/art", controllers.postsController); // endpoint beginning with /art
 
 dbConnection.authenticate()
     .then(() => dbConnection.sync(
-        // {force: true}
+        //{force: true}
     ))
         .then(() => {
-            app.listen(3000, () => {
-                console.log(`[Server] :Listening on port 3000.`);
+            app.listen(process.env.PORT, () => {
+                console.log(`Server is listening on port ${process.env.PORT}.`);
             });
         })
         .catch((err) => {
-            console.log(`[Server]: Server crashed. Error =${err}`);
+            console.log(`[Server]: Server crashed. Error = ${err}`);
         });
     
