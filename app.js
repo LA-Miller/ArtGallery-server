@@ -17,10 +17,16 @@ app.use("/user", controllers.userController);// endpoint beginning with /user
 app.use("/art", controllers.postsController); // endpoint beginning with /art
 
 dbConnection.authenticate()
-    .then(() => dbConnection.sync())
-    .then(() => {
-        app.listen(process.env.PORT, () => {
-            console.log(`Server is listening on port ${process.env.PORT}.`);
+    .then(() => dbConnection.sync(
+        //{force: true}
+    ))
+        .then(() => {
+            app.listen(process.env.PORT, () => {
+                console.log(`Server is listening on port ${process.env.PORT}.`);
+            });
+        })
+        .catch((err) => {
+            console.log(`[Server]: Server crashed. Error = ${err}`);
         });
     })
     .catch((err) => {
