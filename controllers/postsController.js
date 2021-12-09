@@ -10,8 +10,7 @@ const { PostModel } = require("../models");
 http://localhost:3000/art/create
 */
 router.post("/create", validateJWT, async (req, res) => {
-    const { artist_name, url, description, style, era, for_sale, price } =
-        req.body.art;
+    const { artist_name, url, description, style, era, for_sale, price } = req.body.post;
     const { id } = req.user;
     const email = req.email;
 
@@ -31,6 +30,7 @@ router.post("/create", validateJWT, async (req, res) => {
             message: "Post successful",
         })
     } catch (err) {
+        console.error(err)
         res.status(500).json({ error: err });
     }
 });

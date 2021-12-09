@@ -8,8 +8,7 @@ const Posts = db.define("posts", {
     },
     url: {
         type: DataTypes.TEXT,
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     description: {
         type: DataTypes.STRING,
