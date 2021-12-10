@@ -40,19 +40,14 @@ router.post("/create", validateJWT, async (req, res) => {
 
 /*
 ========================================
-   Get All Posts of an Individual User
+   Get All Posts 
 ========================================
 http://localhost:3000/art/
 */
 
 router.get("/", validateJWT, async (req, res) => {
-    const { id } = req.user;
     try {
-        const userPosts = await PostModel.findAll({
-            where: {
-                owner_id: id,
-            },
-        });
+        const userPosts = await PostModel.findAll();
         res.status(200).json(userPosts);
     } catch (err) {
         res.status(500).json({ error: err });
