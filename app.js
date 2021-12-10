@@ -28,8 +28,4 @@ dbConnection.authenticate()
         .catch((err) => {
             console.log(`[Server]: Server crashed. Error = ${err}`);
         });
-    })
-    .catch((err) => {
-        console.log(`[Server]: Server crashed. Error =${err}`);
-    });
 
