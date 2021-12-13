@@ -14,8 +14,9 @@ router.post("/create", validateJWT, async (req, res) => {
     const { id } = req.user;
     const email = req.email;
 
-    
-    console.log("hey I am here");
+    const forSale = for_sale === "on" ? true : false;
+    const priceInt = parseInt(price);
+    console.log(priceInt);
     try {
         const newPost = await PostModel.create({
             artist_name,
@@ -23,8 +24,8 @@ router.post("/create", validateJWT, async (req, res) => {
             description,
             style,
             era,
-            for_sale:for_sale === "on" ? true : false,
-            price: Number(price),
+            for_sale: forSale,
+            price: priceInt,
             owner_id: id,
             email: email,
         });
@@ -39,19 +40,14 @@ router.post("/create", validateJWT, async (req, res) => {
 
 /*
 ========================================
-   Get All Posts of an Individual User
+   Get All Posts 
 ========================================
 http://localhost:3000/art/
 */
 
 router.get("/", validateJWT, async (req, res) => {
-    const { id } = req.user;
     try {
-        const userPosts = await PostModel.findAll({
-            where: {
-                owner_id: id,
-            },
-        });
+        const userPosts = await PostModel.findAll();
         res.status(200).json(userPosts);
     } catch (err) {
         res.status(500).json({ error: err });
