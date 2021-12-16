@@ -23,7 +23,6 @@ const Posts = db.define("posts", {
     },
     for_sale: {
         type: DataTypes.BOOLEAN,
-        allowNull: false
     },
     price: {
         type: DataTypes.INTEGER,
