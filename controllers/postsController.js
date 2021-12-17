@@ -16,8 +16,7 @@ router.post("/create", validateJWT, async (req, res) => {
   const email = req.email;
 
   const forSale = for_sale === "on" ? true : false;
-  const priceInt = parseInt(price);
-  console.log(priceInt);
+  //const priceInt = parseInt(price);
   try {
     const newPost = await PostModel.create({
       artist_name,
@@ -26,7 +25,7 @@ router.post("/create", validateJWT, async (req, res) => {
       style,
       era,
       for_sale: forSale,
-      price: priceInt,
+      price,
       owner_id: id,
       email: email,
     });
