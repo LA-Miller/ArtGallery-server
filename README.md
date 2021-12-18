@@ -7,6 +7,7 @@ Technology Used:
   React
   Node
   Github
+  Base64
  
 Luke Miller
 https://github.com/LA-Miller
@@ -23,3 +24,13 @@ Assigned Tasks for Luke Miller
    Endpoint 3: "/user" -- get all posts of an individual user
    Complete
   
+Marcus Schnake
+https://github.com/MarcusSchnake
+https://www.linkedin.com/in/marcus-schnake-b1473589/
+
+Assigned Tasks for Marcus Schnake
+  Endpoint 1: User Register-- Complete
+  
+  Endpoint 2: User Login -- Complete
+  
+  Base64 working points -- Complete
