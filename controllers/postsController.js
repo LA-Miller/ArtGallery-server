@@ -78,9 +78,11 @@ http://localhost:3000/art/update/:entryid
 */
 router.put("/update/:entryId", validateJWT, async (req, res) => {
   const { artist_name, url, description, style, era, for_sale, price } =
-    req.body.art;
+    req.body;
   const postId = req.params.entryId;
   const userId = req.user.id;
+
+  const forSale = for_sale === "on" ? true : false;
 
   const query = {
     where: {
@@ -94,7 +96,7 @@ router.put("/update/:entryId", validateJWT, async (req, res) => {
     description: description,
     style: style,
     era: era,
-    for_sale: for_sale,
+    for_sale: forSale,
     price: price,
   };
   try {
