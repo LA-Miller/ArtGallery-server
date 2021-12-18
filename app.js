@@ -9,9 +9,7 @@ app.use(require("./middleware/headers"))
 
 app.use(Express.json({limit: "10mb"}));
 
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors());
 
 app.use("/user", controllers.userController);// endpoint beginning with /user
 app.use("/art", controllers.postsController); // endpoint beginning with /art
